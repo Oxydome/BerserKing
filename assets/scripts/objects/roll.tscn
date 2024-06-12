@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkdd6klwel1dt"]
-
-[ext_resource type="Script" path="res://Roll.gd" id="1_1ei3v"]
-
-[node name="Roll" type="Node2D"]
-script = ExtResource("1_1ei3v")
-
-[node name="RollTimer" type="Timer" parent="."]
-one_shot = true

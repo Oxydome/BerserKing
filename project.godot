@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=60
 config/icon="res://assets/icon.svg"
 
-[audio]
-
-buses/default_bus_layout=""
-
 [autoload]
 
 Global="*res://assets/scripts/globals/global.gd"
@@ -29,10 +25,6 @@ Global="*res://assets/scripts/globals/global.gd"
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/vsync/vsync_mode=2
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg")
 
 [input]
 
@@ -73,5 +65,4 @@ roll={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.054902, 0.262745, 0.65098, 1)
