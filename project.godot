@@ -11,14 +11,10 @@ config_version=5
 [application]
 
 config/name="Berser King"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/lobby.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=60
 config/icon="res://assets/icon.svg"
-
-[autoload]
-
-Global="*res://assets/scripts/globals/global.gd"
 
 [display]
 
