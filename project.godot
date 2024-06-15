@@ -14,13 +14,20 @@ config/name="Berser King"
 run/main_scene="res://scenes/lobby.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=60
-config/icon="res://assets/icon.svg"
 
 [display]
 
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=1152
+window/size/window_height_override=648
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/vsync/vsync_mode=2
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -61,4 +68,5 @@ roll={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.054902, 0.262745, 0.65098, 1)
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
