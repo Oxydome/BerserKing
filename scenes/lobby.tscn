@@ -1,18 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwbx8awaml8p8"]
+[gd_scene load_steps=5 format=3 uid="uid://bwbx8awaml8p8"]
 
+[ext_resource type="TileSet" uid="uid://3t0ns3got2qu" path="res://assets/textures/all-tiles.tres" id="1_q3hrq"]
 [ext_resource type="Texture2D" uid="uid://d14k5clkj3upk" path="res://assets/textures/all-sprites.png" id="2_3wp0s"]
+[ext_resource type="Shader" path="res://darkness.gdshader" id="2_20mxg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ifgh"]
+shader = ExtResource("2_20mxg")
+shader_parameter/size = Vector2(8, 8)
 
 [node name="Lobby" type="Node2D"]
 
+[node name="Level" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_q3hrq")
+format = 2
+layer_0/name = "Ground"
+layer_1/name = "Objects"
+layer_1/tile_data = PackedInt32Array()
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
-offset_left = 116.0
-offset_top = 37.0
-offset_right = 207.0
-offset_bottom = 124.0
+offset_left = 245.0
+offset_top = 54.0
+offset_right = 409.0
+offset_bottom = 191.0
 texture = ExtResource("2_3wp0s")
-region_rect = Rect2(0, 128, 16, 16)
-patch_margin_left = 5
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+region_rect = Rect2(0, 144, 16, 16)
+patch_margin_left = 7
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_6ifgh")
+offset_left = 144.0
+offset_top = 71.0
+offset_right = 464.0
+offset_bottom = 247.0
