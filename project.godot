@@ -25,6 +25,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/vsync/vsync_mode=2
 
+[dotnet]
+
+project/assembly_name="Berser King"
+
 [filesystem]
 
 import/blender/enabled=false
