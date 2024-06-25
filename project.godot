@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Berser King"
+config/version="0.1"
 run/main_scene="res://scenes/lobby.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-run/max_fps=60
 
 [display]
 
@@ -73,4 +73,5 @@ roll={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
