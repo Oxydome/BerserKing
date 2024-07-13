@@ -19,3 +19,7 @@ texture_filter = 1
 texture = ExtResource("2_8qjk3")
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
