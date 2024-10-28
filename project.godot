@@ -75,6 +75,10 @@ roll={
 ]
 }
 
+[orchestrator]
+
+settings/notify_about_pre-releases=false
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
