@@ -1,16 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceeflcvylasqu"]
+[gd_scene load_steps=10 format=3 uid="uid://ceeflcvylasqu"]
 
 [ext_resource type="Script" path="res://assets/scripts/scenes/game.gd" id="1_dxqvq"]
-[ext_resource type="PackedScene" uid="uid://d3sxsi757kua3" path="res://assets/objects/entities/player.tscn" id="2_qvi8q"]
+[ext_resource type="PackedScene" path="res://assets/objects/entities/player.tscn" id="2_qvi8q"]
 [ext_resource type="PackedScene" uid="uid://bjys0cg0pfd2k" path="res://scenes/game_ui.tscn" id="3_2wiq8"]
 [ext_resource type="PackedScene" uid="uid://8o6cc8gbhk38" path="res://assets/objects/entities/debug/spawn_button.tscn" id="4_jhpqy"]
 [ext_resource type="PackedScene" uid="uid://dqqdir8hxkrj1" path="res://assets/scripts/objects/weapons/shuriken/shuriken.tscn" id="4_l7oa8"]
 [ext_resource type="PackedScene" uid="uid://bon4qdiqxfnmv" path="res://assets/objects/weapons/glock_17.tscn" id="5_duby4"]
+[ext_resource type="Script" path="res://assets/scripts/classes/entity_manager.gd" id="6_emanager"]
+[ext_resource type="Resource" uid="uid://c3initalwave01" path="res://data/waves/inital_wave.tres" id="7_w1"]
+[ext_resource type="Resource" uid="uid://c3genwave001" path="res://data/waves/general_wave.tres" id="8_w2"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_dxqvq")
 spawn_rate = 0.4
 spawn_offset = Vector2i(100, 100)
+
+[node name="BackgroundCanvas" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="BackgroundColor" type="ColorRect" parent="BackgroundCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="GameUI" parent="." instance=ExtResource("3_2wiq8")]
 
@@ -20,59 +34,64 @@ motion_mode = 1
 
 [node name="Shuriken" parent="Player" instance=ExtResource("4_l7oa8")]
 
-[node name="SpawnButton" parent="." instance=ExtResource("4_jhpqy")]
-offset_left = 18.0
-offset_top = 125.0
-offset_right = 116.0
-offset_bottom = 156.0
-item = "res://assets/objects/entities/chest.tscn"
+; [node name="SpawnButton" parent="." instance=ExtResource("4_jhpqy")]
+; offset_left = 18.0
+; offset_top = 125.0
+; offset_right = 116.0
+; offset_bottom = 156.0
+; item = "res://assets/objects/entities/chest.tscn"
 
-[node name="Node2D" type="Node2D" parent="SpawnButton"]
-position = Vector2(142, -38)
+; [node name="Node2D" type="Node2D" parent="SpawnButton"]
+; position = Vector2(142, -38)
 
-[node name="SpawnButton2" parent="." instance=ExtResource("4_jhpqy")]
-offset_left = 225.0
-offset_top = 126.0
-offset_right = 323.0
-offset_bottom = 157.0
-item = "res://assets/objects/items/defence.tscn"
+; [node name="SpawnButton2" parent="." instance=ExtResource("4_jhpqy")]
+; offset_left = 225.0
+; offset_top = 126.0
+; offset_right = 323.0
+; offset_bottom = 157.0
+; item = "res://assets/objects/items/defence.tscn"
 
-[node name="Node2D" type="Node2D" parent="SpawnButton2"]
-position = Vector2(132, -38)
+; [node name="Node2D" type="Node2D" parent="SpawnButton2"]
+; position = Vector2(132, -38)
 
-[node name="SpawnButton3" parent="." instance=ExtResource("4_jhpqy")]
-offset_left = 20.0
-offset_top = 232.0
-offset_right = 118.0
-offset_bottom = 263.0
-item = "res://assets/objects/items/health.tscn"
+; [node name="SpawnButton3" parent="." instance=ExtResource("4_jhpqy")]
+; offset_left = 20.0
+; offset_top = 232.0
+; offset_right = 118.0
+; offset_bottom = 263.0
+; item = "res://assets/objects/items/health.tscn"
 
-[node name="Node2D" type="Node2D" parent="SpawnButton3"]
-position = Vector2(121, -29)
+; [node name="Node2D" type="Node2D" parent="SpawnButton3"]
+; position = Vector2(121, -29)
 
-[node name="SpawnButton4" parent="." instance=ExtResource("4_jhpqy")]
-offset_left = 225.0
-offset_top = 236.0
-offset_right = 323.0
-offset_bottom = 267.0
-item = "res://assets/objects/items/speed.tscn"
+; [node name="SpawnButton4" parent="." instance=ExtResource("4_jhpqy")]
+; offset_left = 225.0
+; offset_top = 236.0
+; offset_right = 323.0
+; offset_bottom = 267.0
+; item = "res://assets/objects/items/speed.tscn"
 
-[node name="Node2D" type="Node2D" parent="SpawnButton4"]
-position = Vector2(127, -39)
+; [node name="Node2D" type="Node2D" parent="SpawnButton4"]
+; position = Vector2(127, -39)
 
-[node name="SpawnButton5" parent="." instance=ExtResource("4_jhpqy")]
-offset_left = 436.0
-offset_top = 229.0
-offset_right = 534.0
-offset_bottom = 260.0
-item = "res://assets/objects/weapons/bow/bow_item.tscn"
+; [node name="SpawnButton5" parent="." instance=ExtResource("4_jhpqy")]
+; offset_left = 436.0
+; offset_top = 229.0
+; offset_right = 534.0
+; offset_bottom = 260.0
+; item = "res://assets/objects/weapons/bow/bow_item.tscn"
 
-[node name="Node2D" type="Node2D" parent="SpawnButton5"]
-position = Vector2(131, -31)
+; [node name="Node2D" type="Node2D" parent="SpawnButton5"]
+; position = Vector2(131, -31)
 
-[node name="Glock_17" parent="." instance=ExtResource("5_duby4")]
-position = Vector2(446, 149)
+; [node name="Glock_17" parent="." instance=ExtResource("5_duby4")]
+; position = Vector2(446, 149)
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="EntityManager" type="Node" parent="."]
+script = ExtResource("6_emanager")
+waves = [ExtResource("7_w1"), ExtResource("8_w2")]

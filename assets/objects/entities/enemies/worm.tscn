@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://0fy7xcqkixa3"]
+[gd_scene load_steps=4 format=3 uid="uid://0fy7xcqkixb3"]
 
 [ext_resource type="Script" path="res://assets/scripts/objects/entities/enemy.gd" id="1_5ecri"]
 [ext_resource type="SpriteFrames" uid="uid://bu5ithdr85i7c" path="res://assets/textures/sprites/worm/worm.tres" id="2_i10m1"]
@@ -10,7 +10,7 @@ radius = 17.0294
 script = ExtResource("1_5ecri")
 speed = 100
 health = 30
-damage = 2
+damage = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

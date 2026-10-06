@@ -10,7 +10,7 @@ radius = 24.3311
 script = ExtResource("1_llg5c")
 speed = 100
 health = 30
-damage = 2
+damage = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_574et")

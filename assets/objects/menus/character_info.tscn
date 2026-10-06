@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 ]
+
+[ext_resource type="Script" path="res://assets/scripts/menus/character_info.gd" id="1_charinfo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_char"]
+bg_color = Color(0.12, 0.14, 0.18, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.45, 0.6, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CharacterInfo" type="Panel"]
+custom_minimum_size = Vector2(210, 260)
+offset_right = 210.0
+offset_bottom = 260.0
+pivot_offset = Vector2(105, 130)
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_char")
+script = ExtResource("1_charinfo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Character"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PreviewControl" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/PreviewControl"]
+position = Vector2(95, 45)
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.82, 0.88, 1)
+theme_override_font_sizes/font_size = 12
+text = "Character description goes here."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Select"
+
+[connection signal="gui_input" from="." to="." method="_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

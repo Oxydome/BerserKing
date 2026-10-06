@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_acwhl")
-damage = 2
+damage = 20
 health = 10
 max_health = 10
 health_regenerate = 2

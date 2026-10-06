@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/scenes/main_menu.gd" id="1_72f2o"]
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,9 +41,24 @@ text = "Berser King"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Version" type="Label" parent="Background/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "0.0.1V"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayButton" type="Button" parent="Background/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
+
+[node name="LevelSelectButton" type="Button" parent="Background/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Select"
+
+[node name="CharacterSelectButton" type="Button" parent="Background/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Character Select"
 
 [node name="OptionsButton" type="Button" parent="Background/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -52,6 +68,22 @@ text = "Options"
 layout_mode = 2
 text = "Quit"
 
+[node name="VolumeContainer" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="Background/HBoxContainer/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Background/HBoxContainer/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.8
+
 [connection signal="pressed" from="Background/HBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Background/HBoxContainer/VBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="Background/HBoxContainer/VBoxContainer/CharacterSelectButton" to="." method="_on_character_select_button_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

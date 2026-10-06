@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/objects/entities/enemy.gd" id="1_enemy"]
+[ext_resource type="SpriteFrames" path="res://assets/textures/sprites/flying_eye/flying_eye.tres" id="2_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="FlyingEye" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_enemy")
+speed = 140
+health = 20
+damage = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_frames")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")

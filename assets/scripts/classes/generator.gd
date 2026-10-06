@@ -40,20 +40,17 @@ func _init(level_data : LevelTileMap, items_data : Array[ItemResource],  lock_to
 	self.lock_to_entity = lock_to_entity
 	self.seed = seed
 	self.noise_generator.seed = seed
-	self.lock_to_entity.tree_exiting.connect(func(): 
-		tilemap.queue_free()
-		queue_free()
-	)
-	Global.generate_on_new_loaded.connect(func(position : Vector2i, tile : LevelTileMap.Tile):
-		pass
-	)
-	Global.generate_on_unloaded.connect(func(position : Vector2i, tile : LevelTileMap.Tile):
-		pass
-	)
-	Global.generate_on_loaded.connect(func(position : Vector2i, tile : LevelTileMap.Tile):
-		pass
-	)
+	if self.lock_to_entity != null:
+		self.lock_to_entity.tree_exiting.connect(_on_entity_tree_exiting)
 	Global.generate_inited.emit(level_data, lock_to_entity)
+
+func _on_entity_tree_exiting() -> void:
+	if is_instance_valid(tilemap):
+		tilemap.queue_free()
+	queue_free()
+
+func _on_tilemap_tree_exiting() -> void:
+	is_running = false
 
 ##Start chunk generation, if not started.
 func generate() -> void:
@@ -62,7 +59,7 @@ func generate() -> void:
 	self.is_running = true
 	self.tilemap = TileMap.new()
 	tilemap.name = "Level"
-	self.tilemap.tree_exiting.connect(func(): is_running = false)
+	self.tilemap.tree_exiting.connect(_on_tilemap_tree_exiting)
 	self.tilemap.tile_set = self.level_data.tile_set
 	for layer in self.level_data.get_layers_count():
 		self.tilemap.add_layer(layer)

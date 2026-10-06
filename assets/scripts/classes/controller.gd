@@ -6,7 +6,7 @@ class_name Controller
 func _init(speed := 100) -> void:
 	self.speed = speed
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var parent = get_parent()
 	if Global.CurrentPlayer != null:
 		parent.velocity = (Global.CurrentPlayer.position - parent.position).normalized() * self.speed

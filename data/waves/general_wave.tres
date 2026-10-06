@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WaveResource" load_steps=5 format=3 uid="uid://c3genwave001"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/wave_resource.gd" id="1_wvrsc"]
+[ext_resource type="Script" path="res://assets/scripts/classes/wave_entry_resource.gd" id="2_wvent"]
+[ext_resource type="Resource" uid="uid://dngameenemy01" path="res://data/entities/enemy.tres" id="3_enm01"]
+
+[sub_resource type="Resource" id="Resource_gen_01"]
+script = ExtResource("2_wvent")
+entity = ExtResource("3_enm01")
+amount = 50
+spawn_chance = 100
+
+[resource]
+script = ExtResource("1_wvrsc")
+start_event = ""
+end_event = ""
+step_event = ""
+wave_spawn_cooldown = 0.5
+max_entities = 200
+wave_enteries = Array[ExtResource("2_wvent")]([SubResource("Resource_gen_01")])

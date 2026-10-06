@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6j2k4x6tq7ny"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/trail_renderer.gd" id="1_tr"]
+
+[node name="TrailRenderer" type="Line2D"]
+width = 20.0
+script = ExtResource("1_tr")
