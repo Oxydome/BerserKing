@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=5 format=3 uid="uid://b2damageitemupgrade"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/attribute.gd" id="1_attr"]
+
+[sub_resource type="Resource" id="Resource_state_0"]
+script = ExtResource("1_attr").IState
+component_name = "Player"
+stat_name = "touch_damage"
+value = "10"
+overwrite = false
+
+[sub_resource type="Resource" id="Resource_level_0"]
+script = ExtResource("1_attr").Level
+description = "More Damage"
+states = [SubResource("Resource_state_0")]
+
+[resource]
+script = ExtResource("1_attr")
+id = 2
+item_name = "Damage"
+item_description = "gives more damage"
+spawn_rate = 0.2
+levels = [SubResource("Resource_level_0")]

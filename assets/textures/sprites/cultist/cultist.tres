@@ -1,0 +1,118 @@
+[gd_resource type="SpriteFrames" load_steps=22 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/idle_1.png" id="ext_1"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/idle_2.png" id="ext_2"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/idle_3.png" id="ext_3"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/idle_4.png" id="ext_4"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/idle_5.png" id="ext_5"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/run_1.png" id="ext_6"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/run_2.png" id="ext_7"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/run_3.png" id="ext_8"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/run_4.png" id="ext_9"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/run_5.png" id="ext_10"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/run_6.png" id="ext_11"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/get_hit_1.png" id="ext_12"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/get_hit_2.png" id="ext_13"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/get_hit_3.png" id="ext_14"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/get_hit_4.png" id="ext_15"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/death_1.png" id="ext_16"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/death_2.png" id="ext_17"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/death_3.png" id="ext_18"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/death_4.png" id="ext_19"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/death_5.png" id="ext_20"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/cultist/death_6.png" id="ext_21"]
+
+[resource]
+animations = [
+{
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_5")
+}
+],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_11")
+}
+],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_15")
+}
+],
+"loop": true,
+"name": &"get_hit",
+"speed": 5.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_21")
+}
+],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}]

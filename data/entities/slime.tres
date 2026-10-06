@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EntityResource" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/entity_resource.gd" id="1_entres"]
+[ext_resource type="SpriteFrames" path="res://assets/textures/sprites/slime/slime.tres" id="2_frames"]
+[ext_resource type="PackedScene" path="res://assets/objects/entities/enemies/slime.tscn" id="3_scene"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enm"]
+radius = 16.0
+
+[resource]
+script = ExtResource("1_entres")
+id = 22
+description = "Slime enemy"
+damage = 20
+health = 20
+max_health = 20
+speed = 80
+max_speed = 120.0
+health_regenerate = 0
+name = "Slime"
+sprite_frames = ExtResource("2_frames")
+shape = SubResource("CircleShape2D_enm")
+scene = ExtResource("3_scene")

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddpukwi1e3pmj"]
+[gd_scene load_steps=8 format=3 uid="uid://ddpukwi1e3pmj"]
 
 [ext_resource type="TileSet" uid="uid://4th2ocujxy7y" path="res://assets/textures/tilemaps/tileSet_64x64.tres" id="1_x6ais"]
 [ext_resource type="PackedScene" uid="uid://d3sxsi757kua3" path="res://assets/objects/entities/player.tscn" id="2_nim8n"]
-[ext_resource type="Script" path="res://assets/scripts/objects/mirror.gd" id="3_krdx0"]
-[ext_resource type="SpriteFrames" uid="uid://ds6hg4dcgtowg" path="res://assets/textures/sprites/player/player.tres" id="3_ulmq3"]
+[ext_resource type="PackedScene" uid="uid://b7doorobject01" path="res://assets/objects/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://bjys0cg0pfd2k" path="res://scenes/game_ui.tscn" id="4_gameui"]
+[ext_resource type="Script" path="res://assets/scripts/classes/entity_manager.gd" id="5_emanager"]
+[ext_resource type="Resource" uid="uid://c3initalwave01" path="res://data/waves/inital_wave.tres" id="6_w1"]
+[ext_resource type="Resource" uid="uid://c3genwave001" path="res://data/waves/general_wave.tres" id="7_w2"]
 
 [node name="Lobby" type="TileMap"]
 tile_set = ExtResource("1_x6ais")
@@ -15,30 +18,25 @@ layer_0/tile_data = PackedInt32Array(0, 0, 5, 65536, 0, 5, 131072, 0, 5, 1, 1966
 z_index = 1
 position = Vector2(1260, 539)
 
-[node name="Mirror" type="SubViewportContainer" parent="."]
-custom_minimum_size = Vector2(50, 100)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 518.0
-offset_top = 90.0
-offset_right = 568.0
-offset_bottom = 190.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.00405, 1)
-script = ExtResource("3_krdx0")
+[node name="GameUI" parent="." instance=ExtResource("4_gameui")]
 
-[node name="SubViewport" type="SubViewport" parent="Mirror"]
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-gui_disable_input = true
-size = Vector2i(50, 100)
+[node name="DoorCenter" parent="." instance=ExtResource("3_door")]
+position = Vector2(992, 160)
+target_scene = "res://scenes/game.tscn"
+prompt_text = "Enter Dungeon [E]"
 
-[node name="MirrorPlayer" type="AnimatedSprite2D" parent="Mirror/SubViewport"]
-sprite_frames = ExtResource("3_ulmq3")
-animation = &"death"
-flip_h = true
+[node name="DoorLeft" parent="." instance=ExtResource("3_door")]
+position = Vector2(480, 160)
+target_scene = "res://scenes/levels_old.tscn"
+prompt_text = "Level Select [E]"
 
-[node name="Camera2D" type="Camera2D" parent="Mirror/SubViewport/MirrorPlayer"]
-anchor_mode = 0
+[node name="DoorRight" parent="." instance=ExtResource("3_door")]
+position = Vector2(1888, 160)
+target_scene = "res://scenes/game.tscn"
+prompt_text = "Enter Dungeon [E]"
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EntityManager" type="Node" parent="."]
+script = ExtResource("5_emanager")
+waves = [ExtResource("6_w1"), ExtResource("7_w2")]

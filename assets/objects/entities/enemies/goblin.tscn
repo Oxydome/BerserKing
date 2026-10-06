@@ -11,7 +11,7 @@ texture_filter = 1
 script = ExtResource("1_ugjme")
 speed = 180
 health = 35
-damage = 4
+damage = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)

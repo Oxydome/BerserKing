@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlevelsselect01"]
+
+[ext_resource type="Script" path="res://assets/scripts/scenes/levels.gd" id="1_04720"]
+[ext_resource type="PackedScene" uid="uid://quii2duuw7uf" path="res://assets/objects/level_info.tscn" id="3_jvfbk"]
+
+[node name="Levels" type="Control" node_paths=PackedStringArray("levels_menu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_04720")
+levels_menu = NodePath("Panel/HBoxContainer/VBoxContainer/Levels")
+levels_path = "res://assets/levels"
+level_icon = ExtResource("3_jvfbk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Levels" type="GridContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Back" type="Button" parent="Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

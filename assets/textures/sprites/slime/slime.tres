@@ -1,0 +1,154 @@
+[gd_resource type="SpriteFrames" load_steps=31 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_1.png" id="ext_1"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_2.png" id="ext_2"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_3.png" id="ext_3"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_4.png" id="ext_4"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_5.png" id="ext_5"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_6.png" id="ext_6"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_7.png" id="ext_7"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_8.png" id="ext_8"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_9.png" id="ext_9"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/idle_10.png" id="ext_10"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_1.png" id="ext_11"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_2.png" id="ext_12"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_3.png" id="ext_13"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_4.png" id="ext_14"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_5.png" id="ext_15"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_6.png" id="ext_16"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_7.png" id="ext_17"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/run_8.png" id="ext_18"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/get_hit_1.png" id="ext_19"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/get_hit_2.png" id="ext_20"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/get_hit_3.png" id="ext_21"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/get_hit_4.png" id="ext_22"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/get_hit_5.png" id="ext_23"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/get_hit_6.png" id="ext_24"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/death_1.png" id="ext_25"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/death_2.png" id="ext_26"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/death_3.png" id="ext_27"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/death_4.png" id="ext_28"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/death_5.png" id="ext_29"]
+[ext_resource type="Texture2D" path="res://assets/textures/sprites/slime/death_6.png" id="ext_30"]
+
+[resource]
+animations = [
+{
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_10")
+}
+],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_18")
+}
+],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_24")
+}
+],
+"loop": true,
+"name": &"get_hit",
+"speed": 5.0
+}, {
+"frames": [
+{
+"duration": 1.0,
+"texture": ExtResource("ext_25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ext_30")
+}
+],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}]

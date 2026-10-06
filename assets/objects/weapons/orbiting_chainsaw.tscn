@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://djf8w8e0a1b2c"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/path_creator.gd" id="1_pcreator"]
+[ext_resource type="Script" path="res://assets/scripts/classes/follow_path.gd" id="2_fpath"]
+[ext_resource type="PackedScene" uid="uid://bshw7x1e2yq4" path="res://assets/objects/weapons/chainsaw_particle.tscn" id="3_csaw"]
+
+[node name="OrbitingChainsaw" type="Node2D"]
+
+[node name="PathCreator" type="Node2D" parent="."]
+script = ExtResource("1_pcreator")
+radius_x = 70.0
+radius_y = 50.0
+
+[node name="FollowPath" type="Node2D" parent="." node_paths=PackedStringArray("path_creator")]
+script = ExtResource("2_fpath")
+path_creator = NodePath("../PathCreator")
+speed = 180.0
+
+[node name="ChainsawParticle" parent="FollowPath" instance=ExtResource("3_csaw")]

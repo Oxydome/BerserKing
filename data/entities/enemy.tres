@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EntityResource" load_steps=4 format=3 uid="uid://dngameenemy01"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/entity_resource.gd" id="1_acwhl"]
+[ext_resource type="SpriteFrames" uid="uid://bu5ithdr85i7c" path="res://assets/textures/sprites/worm/worm.tres" id="2_syj6b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enm01"]
+radius = 16.0
+
+[resource]
+script = ExtResource("1_acwhl")
+id = 1
+description = "Main Test enemy"
+damage = 20
+health = 20
+max_health = 20
+speed = 100.0
+max_speed = 200.0
+health_regenerate = 0
+name = "Enemy"
+sprite_frames = ExtResource("2_syj6b")
+shape = SubResource("CircleShape2D_enm01")

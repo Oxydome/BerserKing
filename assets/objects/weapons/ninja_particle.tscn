@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf6n7pj3k2lm"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/ninja_particle.gd" id="1_ninja"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ninja"]
+radius = 16.0
+
+[node name="NinjaParticle" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_ninja")
+damage = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ninja")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 16
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 45.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.2, 0.7, 1.0, 0.9)

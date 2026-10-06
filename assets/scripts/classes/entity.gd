@@ -12,4 +12,9 @@ func _init(data : EntityResource, do_spawning := true) -> void:
 	self.health = Health.new(data.max_health, data.health)
 	add_child(self.controller)
 	add_child(self.health)
-	Global.health_killed.connect(func(entity): if entity == self: entity.despawn())
+	if Global != null and Global.has_signal("health_killed"):
+		Global.health_killed.connect(_on_global_health_killed)
+
+func _on_global_health_killed(killed_entity: Node) -> void:
+	if killed_entity == self:
+		despawn()

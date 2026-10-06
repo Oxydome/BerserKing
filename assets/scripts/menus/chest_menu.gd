@@ -5,9 +5,19 @@ var path = "res://assets/objects/items/"
 var loop_len = 15
 var timer_offset = 1.6
 
+func _get_global() -> Node:
+	if is_inside_tree():
+		return get_node_or_null("/root/Global")
+	var main_loop = Engine.get_main_loop()
+	if main_loop is SceneTree and main_loop.root != null:
+		return main_loop.root.get_node_or_null("Global")
+	return null
+
 func load_items():
 	var items = []
 	var dir = DirAccess.open(path)
+	if dir == null:
+		return items
 	dir.list_dir_begin()
 	while true:
 		var file_name = dir.get_next()
@@ -19,11 +29,13 @@ func load_items():
 	return items
 
 func show_menu():
-	if Global.CurrentGameUI.has_menu:
-		return false
-	else:
-		Global.CurrentGameUI.has_menu = true
-	Global.CurrentGameUI.add_child(self)
+	var global = _get_global()
+	if global != null and global.CurrentGameUI != null:
+		if global.CurrentGameUI.has_menu:
+			return false
+		else:
+			global.CurrentGameUI.has_menu = true
+		global.CurrentGameUI.add_child(self)
 	get_tree().paused = true
 	var items = load_items()
 	if items.size() == 0:
@@ -46,6 +58,9 @@ func show_menu():
 
 func _on_ok_button_pressed() -> void:
 	get_tree().paused = false
-	Global.CurrentGameUI.has_menu = false
-	Global.CurrentGameUI.inventory.add_slot($MarginContainer/VBoxContainer/Image.texture, $MarginContainer/VBoxContainer/Name.text)
+	var global = _get_global()
+	if global != null and global.CurrentGameUI != null:
+		global.CurrentGameUI.has_menu = false
+		if "inventory" in global.CurrentGameUI and global.CurrentGameUI.inventory != null:
+			global.CurrentGameUI.inventory.add_slot($MarginContainer/VBoxContainer/Image.texture, $MarginContainer/VBoxContainer/Name.text)
 	queue_free()

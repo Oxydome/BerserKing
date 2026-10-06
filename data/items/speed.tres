@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=7 format=3 uid="uid://b1speeditemupgrade"]
+
+[ext_resource type="Script" path="res://assets/scripts/classes/attribute.gd" id="1_attr"]
+
+[sub_resource type="Resource" id="Resource_state_0"]
+script = ExtResource("1_attr").IState
+component_name = "Movement"
+stat_name = "Speed"
+value = "120"
+overwrite = true
+
+[sub_resource type="Resource" id="Resource_level_0"]
+script = ExtResource("1_attr").Level
+description = "Speed Boost Level 1"
+states = [SubResource("Resource_state_0")]
+
+[sub_resource type="Resource" id="Resource_state_1"]
+script = ExtResource("1_attr").IState
+component_name = "Movement"
+stat_name = "Speed"
+value = "200"
+overwrite = true
+
+[sub_resource type="Resource" id="Resource_level_1"]
+script = ExtResource("1_attr").Level
+description = "Speed Boost Level 2"
+states = [SubResource("Resource_state_1")]
+
+[resource]
+script = ExtResource("1_attr")
+id = 3
+item_name = "Speed"
+item_description = "Gives Speed."
+spawn_rate = 0.1
+levels = [SubResource("Resource_level_0"), SubResource("Resource_level_1")]

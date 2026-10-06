@@ -17,16 +17,15 @@ func spawn() -> void:
 	self.collision_shape = CollisionShape2D.new()
 	self.collision_shape.shape = data.shape
 	if data.shape is CircleShape2D:
-		self.collision_shape.shape.radius = data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_width() / 2
+		self.collision_shape.shape.radius = float(data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_width()) / 2.0
 	elif data.shape is RectangleShape2D:
-		self.collision_shape.shape.size = data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_size() / 2
+		self.collision_shape.shape.size = Vector2(data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_size()) / 2.0
 	elif data.shape is CapsuleShape2D:
-		self.collision_shape.shape.radius = data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_width() / 2
-		self.collision_shape.shape.height = data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_height() / 2
+		self.collision_shape.shape.radius = float(data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_width()) / 2.0
+		self.collision_shape.shape.height = float(data.sprite_frames.get_frame_texture(data.sprite_frames.get_animation_names()[0], 0).get_height()) / 2.0
 	add_child(self.collision_shape)
 	Global.object_spawned.emit(data)
 
 func despawn() -> void:
 	queue_free()
 	Global.object_despawned.emit(data)
-	
